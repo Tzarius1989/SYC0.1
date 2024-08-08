@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function handleBuyClick() {
-    tg.showConfirm('Вы хотите купить "Feline Fedora" в Cat Shelter за 55 Stars?', (isConfirmed) => {
+    tg.showConfirm('Do you want to buy "Feline Fedora" in Cat Shelter for 55 Stars?', (isConfirmed) => {
         if (isConfirmed) {
-            tg.MainButton.setText('Подтвердить и оплатить ⭐ 55');
+            tg.MainButton.setText('Confirm and Pay ⭐ 55');
             tg.MainButton.show();
             tg.MainButton.onClick(() => {
                 const purchaseData = {
@@ -18,7 +18,12 @@ function handleBuyClick() {
                     amount: 55
                 };
                 tg.sendData(JSON.stringify(purchaseData));
+                tg.MainButton.hide();
             });
         }
     });
 }
+
+tg.onEvent('mainButtonClicked', () => {
+    tg.MainButton.hide();
+});
