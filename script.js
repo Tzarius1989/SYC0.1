@@ -22,7 +22,7 @@ function handleBuyClick() {
                 description: "Stylish hat for your cat",
                 prices: [{ label: "Feline Fedora", amount: 5500 }], // 55 Stars * 100 (в минимальных единицах)
                 payload: "cat_hat_001",
-                currency: "XTR" // Используем XTR для платежей в Telegram Stars
+                currency: "XTR"
             };
 
             tg.openInvoice(JSON.stringify(invoiceParams), (status) => {
