@@ -17,23 +17,14 @@ function handleBuyClick() {
         ]
     }, (buttonId) => {
         if (buttonId === 'buy') {
-            const invoiceParams = {
-                title: "Feline Fedora",
-                description: "Stylish hat for your cat",
-                prices: [{ label: "Feline Fedora", amount: 5500 }], // 55 Stars * 100 (в минимальных единицах)
-                payload: "cat_hat_001",
-                currency: "XTR"
+            const purchaseData = {
+                action: 'buy',
+                product: 'Feline Fedora',
+                amount: 55
             };
 
-            tg.openInvoice(JSON.stringify(invoiceParams), (status) => {
-                if (status === 'paid') {
-                    tg.showAlert('Спасибо за покупку!');
-                } else if (status === 'failed') {
-                    tg.showAlert('Произошла ошибка при оплате. Попробуйте еще раз.');
-                } else if (status === 'cancelled') {
-                    tg.showAlert('Покупка отменена.');
-                }
-            });
+            tg.sendData(JSON.stringify(purchaseData));
+            tg.close();
         }
     });
 }
