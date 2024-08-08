@@ -1,34 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Shelter</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app">
-        <div class="game-interface">
-            <div class="top-bar">
-                <div class="balance">
-                    <img src="star-icon.png" alt="Star" class="star-icon">
-                    <span id="balance">300</span>
-                </div>
-            </div>
-            <div class="game-area">
-                <img src="cat-shelter-bg.png" alt="Cat Shelter" class="background">
-                <button id="upgradeButton" class="upgrade-button">UPGRADE</button>
-            </div>
-        </div>
-        <div id="purchasePopup" class="purchase-popup hidden">
-            <div class="popup-content">
-                <img src="feline-fedora.png" alt="Feline Fedora" class="item-image">
-                <h2>Confirm Your Purchase</h2>
-                <p>Do you want to buy "Feline Fedora" in Cat Shelter for 55 Stars?</p>
-                <button id="confirmButton" class="confirm-button">Confirm and Pay ⭐ 55</button>
-            </div>
-        </div>
+        <div class="balance">Balance: <span id="balance">300</span> Stars</div>
+        <button id="buyButton" class="buy-button">Buy Feline Fedora</button>
     </div>
     <script src="script.js"></script>
 </body>
